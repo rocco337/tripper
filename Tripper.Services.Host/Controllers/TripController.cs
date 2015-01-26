@@ -21,5 +21,17 @@ namespace Tripper.Services.Host.Controllers
         {
             return Enumerable.Range(1, 1000);
         }
+
+        [HttpGet]
+        public bool AddNew()
+        {
+            _tripService.Add(new Entities.Entities.TripEntity()
+            {
+                Name = "Test trip",
+                Description = "Test trip to the tes location"
+            });
+
+            return true;
+        }
     }
 }
